@@ -4,27 +4,17 @@ function addItem()
 {
   var newItem="";
   newItem = document.getElementById("price").value;
-  if (isNaN(newItem))
-    {alert("enter price as a number")}
-  else{
-    newItem = Number(newItem)
-    runningTotal= runningTotal + newItem
-    var dollars;
-    dollars=asCurrency(runningTotal);
-    document.getElementById("subtotal").innerHTML=dollars;
-    document.getElementById("price").innerHTML="";
-    setCookie("preTax",runningTotal,1);
+  if (isNaN(newItem)) //IF newItem is not a number
+    {alert("enter price as a number")}// THEN show an alert: "Enter price as a number"
+  else{ //OTHERWISE,
+    newItem = Number(newItem)// update newItem to its value cast as a number
+    runningTotal= runningTotal + newItem // update runningTotal to be its value plus newItem
+    var dollars;// create a variable called dollars
+    dollars=asCurrency(runningTotal);// call asCurrency() by with the value of runningTotal and assign the return value to dollars
+    document.getElementById("subtotal").innerHTML=dollars;// update the innerHTML of the span with the id "subtotal" to be dollars
+    document.getElementById("price").innerHTML="";// update the value of the input with the id "price" to be an empty string
+    setCookie("preTax",runningTotal,1);// update a cookie called "preTax" with the value of runningTotal
 }
-  //IF newItem is not a number
-  // THEN show an alert: "Enter price as a number"
-  //OTHERWISE,
-  // update newItem to its value cast as a number
-  // update runningTotal to be its value plus newItem
-  // create a variable called dollars
-  // call asCurrency() by with the value of runningTotal and assign the return value to dollars
-  // update the innerHTML of the span with the id "subtotal" to be dollars
-  // update the value of the input with the id "price" to be an empty string
-  // update a cookie called "preTax" with the value of runningTotal
 }
 
 //takes a number and gives a string with the number displayed as USD currency
