@@ -2,8 +2,10 @@ var runningTotal = 0.0;
 
 function addItem()
 {
-  var newItem;
+  var newItem="";
   newItem = document.getElementById("price").value;
+  if (isNaN(newItem))
+    {alert("enter price as a number")}
   //IF newItem is not a number
   // THEN show an alert: "Enter price as a number"
   //OTHERWISE,
