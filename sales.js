@@ -16,6 +16,20 @@ function addItem()
     setCookie("preTax",runningTotal,1);// update a cookie called "preTax" with the value of runningTotal
 }
 }
+function calculateReceipt(){
+  var receiptSubtotal;
+  receiptSubtotal = Number(receiptSubtotal)
+  receiptSubtotal=runningTotal
+  calculateReceipt=asCurrency(receiptSubtotal);
+  var receiptTax;
+  receiptTax = receiptSubtotal * 0.075
+  var receiptTotal;
+  receiptTotal = receiptSubtotal + receiptTax
+  document.getElementById("sub").innerHTML=calculateReceipt;
+  document.getElementById("tax").innerHTML=receiptTax;
+  document.getElementById("tot").innerHTML=receiptTotal;
+  getCookie("preTax",receiptSubtotal,1);
+}
 
 //takes a number and gives a string with the number displayed as USD currency
 function asCurrency(val)
